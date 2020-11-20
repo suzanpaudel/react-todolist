@@ -2,7 +2,7 @@ import React from 'react';
 import { ListGroup, Container } from 'react-bootstrap';
 import TodoItem from './TodoItem';
 
-const TaskList = ({ todos, setTodos }) => {
+const TodoList = ({ todos, setTodos }) => {
   return (
     <Container>
       <ListGroup>
@@ -20,4 +20,4 @@ const TaskList = ({ todos, setTodos }) => {
   );
 };
 
-export default TaskList;
+export default TodoList;

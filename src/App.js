@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import TaskInput from './components/TaskInput';
-import TaskList from './components/TaskList';
+import TodoInput from './components/TodoInput';
+import TodoList from './components/TodoList';
 function App() {
   const [inputTask, setInputTask] = useState('');
   const [todos, setTodos] = useState([]);
   return (
     <div>
       <Navbar />
-      <TaskInput
+      <TodoInput
         inputTask={inputTask}
         setInputTask={setInputTask}
         todos={todos}
         setTodos={setTodos}
       />
-      <TaskList todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

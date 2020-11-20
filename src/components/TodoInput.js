@@ -1,15 +1,17 @@
 import React from 'react';
 import { Container, Card, Form, Button } from 'react-bootstrap';
 
-const TaskInput = ({ inputTask, setInputTask, todos, setTodos }) => {
+const TodoInput = ({ inputTask, setInputTask, todos, setTodos }) => {
   const changeInput = (e) => {
     setInputTask(e.target.value);
   };
 
   const addTask = (e) => {
     e.preventDefault();
-    setTodos([...todos, { text: inputTask, id: Math.random() * 100 }]);
-    setInputTask('');
+    if (inputTask !== '') {
+      setTodos([...todos, { text: inputTask, id: Math.random() * 100 }]);
+      setInputTask('');
+    }
   };
 
   return (
@@ -42,4 +44,4 @@ const TaskInput = ({ inputTask, setInputTask, todos, setTodos }) => {
   );
 };
 
-export default TaskInput;
+export default TodoInput;
