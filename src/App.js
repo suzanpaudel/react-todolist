@@ -1,7 +1,16 @@
 import './App.css';
-
+import Navbar from './components/Navbar';
+import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
 function App() {
-  return <div>This is a todolist app</div>;
+  return (
+    <div>
+      <Navbar />
+      <TaskInput />
+      <TaskList />
+      <TaskList />
+    </div>
+  );
 }
 
 export default App;
