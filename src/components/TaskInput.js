@@ -1,7 +1,17 @@
 import React from 'react';
 import { Container, Card, Form, Button } from 'react-bootstrap';
 
-const TaskInput = () => {
+const TaskInput = ({ inputTask, setInputTask, todos, setTodos }) => {
+  const changeInput = (e) => {
+    setInputTask(e.target.value);
+  };
+
+  const addTask = (e) => {
+    e.preventDefault();
+    setTodos([...todos, { text: inputTask, id: Math.random() * 100 }]);
+    setInputTask('');
+  };
+
   return (
     <Container className='my-5 text-center'>
       <Card>
@@ -13,9 +23,18 @@ const TaskInput = () => {
                 size='lg'
                 type='text'
                 placeholder='Enter Your ToDo'
+                onChange={changeInput}
+                value={inputTask}
               />
             </Form.Group>
-            <Button as='input' type='submit' value='Submit' size='lg' block />
+            <Button
+              as='input'
+              type='submit'
+              value='Submit'
+              size='lg'
+              block
+              onClick={addTask}
+            />
           </Form>
         </Card.Body>
       </Card>
